@@ -1,11 +1,11 @@
-def some
-  yield 1, 'a'
-  yield true, "hello"
-  yield 2
+def twice
+  v1 = yield 10
+  puts v1
+
+  v2 = yield 2
+  puts v2
 end
 
-some do |first, second|
-  # first is Int32 | Bool
-  # second is Char | String | Nil
-  puts first, second
+twice do |i|
+  i + 1
 end
