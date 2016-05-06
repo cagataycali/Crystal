@@ -1,11 +1,5 @@
-def twice
-  v1 = yield 10
-  puts v1
-
-  v2 = yield 2
-  puts v2
+def transform(value,param)
+  yield value,param
 end
 
-twice do |i|
-  i + 1
-end
+puts transform(1,5) { |paramOne, paramTwo| paramOne + paramTwo  } #=> 6
