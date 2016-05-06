@@ -1,8 +1,11 @@
-def twice
-  yield
-  yield
+def some
+  yield 1, 'a'
+  yield true, "hello"
+  yield 2
 end
 
-twice do |i|
-  puts i.inspect # inspect handle param in def.
+some do |first, second|
+  # first is Int32 | Bool
+  # second is Char | String | Nil
+  puts first, second
 end
