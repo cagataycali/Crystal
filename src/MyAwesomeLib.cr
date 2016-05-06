@@ -3,5 +3,12 @@ def twice
   yield 2
 end
 
-twice { |i| puts i + 1 } #=> 3
-twice { |i| break puts "hello" } #=> "hello"
+# Return value
+value = twice do |i|
+  if i == 1
+    break "hello"
+  end
+  i + 1
+end
+
+puts value
