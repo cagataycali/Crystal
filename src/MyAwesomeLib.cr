@@ -1,5 +1,15 @@
-def transform(value,param)
-  yield value,param
+def thrice
+  puts "Before 1"
+  yield 1
+  puts "Before 2"
+  yield 2
+  puts "Before 3"
+  yield 3
+  puts "After 3"
 end
 
-puts transform(1,5) { |paramOne, paramTwo| paramOne + paramTwo  } #=> 6
+thrice do |i|
+  if i == 2
+    break
+  end
+end
