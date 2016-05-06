@@ -1,16 +1,9 @@
-def twice
-  yield
-  yield
+def many
+  yield 1, 2, 3
 end
 
-def test
-  yield
-  yield
-  yield
-  puts "Test"
+many do |x, y, z|
+  puts x + y + z
 end
 
-
-test do
-  puts "Hello!"
-end
+# Output: 6
