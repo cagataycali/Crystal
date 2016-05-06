@@ -4,5 +4,5 @@ def twice
 end
 
 twice do |i|
-  puts i.inspect
+  puts i.inspect # inspect handle param in def.
 end
