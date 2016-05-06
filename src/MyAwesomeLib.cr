@@ -1,9 +1,8 @@
-def many
-  yield 1, 2, 3
+def twice
+  yield
+  yield
 end
 
-many do |x, y, z|
-  puts x + y + z
+twice do |i|
+  puts i.inspect
 end
-
-# Output: 6
