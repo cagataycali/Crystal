@@ -1,15 +1,20 @@
-def twice
-  yield 1,5
-  yield 2,6
-end
-
-# Return value
-value = twice do |i,j|
-  if i == 2
-    break "hello"
+class Foo
+  def one
+    1
   end
-  puts i + 1
-  puts j
+
+  def yield_with_self
+    with self yield
+  end
+
+  def yield_normally
+    yield
+  end
 end
 
-puts value
+def one
+  "one"
+end
+
+puts Foo.new.yield_with_self { one } # => 1
+puts Foo.new.yield_normally { one }  # => "one"
