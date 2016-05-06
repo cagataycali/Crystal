@@ -1,14 +1,15 @@
 def twice
-  yield 1
-  yield 2
+  yield 1,5
+  yield 2,6
 end
 
 # Return value
-value = twice do |i|
-  if i == 1
+value = twice do |i,j|
+  if i == 2
     break "hello"
   end
-  i + 1
+  puts i + 1
+  puts j
 end
 
 puts value
